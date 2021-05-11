@@ -1,0 +1,15 @@
+/* .color1{
+    background-color:black;
+}
+
+.color2{
+    background-color: red;
+} */
+
+.row{
+    height: 80px;
+    width: 80px;
+}
+main{
+    display: flex;
+}

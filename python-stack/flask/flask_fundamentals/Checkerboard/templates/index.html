@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .color1{
+            background-color: {{color1}};
+        }
+
+        .color2{
+            background-color: {{color2}};
+        }
+    </style>
+</head>
+<body>
+    <main>
+        {% set color = "" %}
+        {% for j in range(num_col) %}
+            {% if j%2==0 %}
+                <div class="col">
+                    {% for i in range(num_row) %}
+                        {% if i%2==0 %}
+                            <div class="row color1"></div>
+                        {% endif %}
+                        {% if i%2==1 %}
+                            <div class="row color2"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if j%2==1 %}
+            <div class="col">
+                {% for i in range(num_row) %}
+                    {% if i%2==0 %}
+                        <div class="row color2"></div>
+                    {% endif %}
+                    {% if i%2==1 %}
+                        <div class="row color1"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+        {% endfor %}
+
+        </div>
+    </main>
+</body>
+</html>
