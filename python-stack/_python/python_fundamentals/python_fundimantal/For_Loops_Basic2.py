@@ -58,6 +58,17 @@
 # print(maximum([37,2,1,-9]))
 
 # 8-Ultimate Analysis 
+def ultimate_analysis(list):
+    sumtotal=0
+    for i in range(0,len(list),1):
+        
+
+        sumtotal+=list[i]
+        x=min(list)
+        y=max(list)
+    avg=sumtotal/len(list)
+    return dict
+    print(ultimate_analysis([37,2,1,-9]))
 
  
 
