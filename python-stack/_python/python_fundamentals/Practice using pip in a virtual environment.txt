@@ -1,0 +1,52 @@
+  
+
+1-pip list
+# The pip list command returns the list of packages in the current environmen
+
+C:\Users\Microsoft>pip list
+Package      Version
+------------ -------
+click        7.1.2
+Flask        1.1.2
+itsdangerous 1.1.0
+Jinja2       2.11.3
+MarkupSafe   1.1.1
+pip          21.1.1
+setuptools   56.0.0
+Werkzeug     1.0.1
+
+2-deactivate
+this will deactivate the virtual environment 
+
+3-pip3 list
+ this will back to the original version of pip list were natively package installed
+
+4-call myEnvironments/py3Env/Scripts/activate)
+activate the virtualenv 
+
+E:\python\python-stack\my_environments>call py3Env\Scripts\activate
+
+(py3Env) E:\python\python-stack\my_environments>deactivate
+'deactivate' is not recognized as an internal or external command,
+operable program or batch file.
+
+5-pip install Django==2.2.4
+
+this will install the vrrsion 2.2.4 of django
+
+6-pip freeze
+So pip freeze is a command that allows you to see what modules you have installed with the pip install command to this point.
+
+C:\Users\Microsoft\Desktop>pip freeze
+click==7.1.2
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+Werkzeug==1.0.1
+
+7-pip uninstall Django
+this command will uninstall django framework from our environment
+
+8-pip show Django
+this will show/check  the virsion of django we have
