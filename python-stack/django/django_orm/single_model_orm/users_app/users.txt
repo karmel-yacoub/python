@@ -1,0 +1,46 @@
+1-
+(djangoPy3Env) E:\python\python-stack\django\django_orm\single_model_orm> python manage.py shell
+Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+
+2-
+>>> from users_app.models import *
+
+3-
+ users.objects.create(first_name="karmel",last_name="yacoub",email_address="karmel@gmail.com",age=25)
+<users: users object (1)>
+users.objects.create(first_name="malk",last_name="akkas",email_address="malk@gmail.com",age=22)
+<users: users object (2)>
+users.objects.create(first_name="reem",last_name="ismail",email_address="reem@gmail.com",age=23)
+<users: users object (3)>
+
+4-
+users.objects.all()
+<QuerySet [<users: users object (1)>, <users: users object (2)>, <users: users object (3)>]>
+
+5-
+users.objects.last()
+<users: users object (3)>
+
+6-
+ users.objects.first()
+<users: users object (1)>
+
+7-
+c=users.objects.get(id=3)
+>>> c.last_name="panckakes"
+>>> c.save()
+
+8-
+ c=users.objects.get(id=2)
+>>> c.delete()
+(1, {'users_app.users': 1})
+
+9-
+ users.objects.all().order_by("first_name")
+<QuerySet [<users: users object (1)>, <users: users object (3)>]>
+
+10-
+users.objects.all().order_by("-first_name")
+<QuerySet [<users: users object (3)>, <users: users object (1)>]>
