@@ -5,11 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}	
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
 </head>
 <body>
-    <h1>Welcome To The Great Number Game!</h1>
-    <p>i am thinking of number betweem 1 and 100 </p>
-    <p>Take a guess!</p>
-    <!-- <form action=""></form> -->
+   <h1>Welcom to Great Number Game!</h1>
+   <p>i'm thinking of a number between 1 to 100</p>
+   <p>take a guess!</p>
+   <h1>{{request.session.name}}</h1>
+   <form action="/karmel" method="POST">
+    {% csrf_token %}
+    <input type="text" id="random" name="guess"><br>
+    <input type="submit" value="Submit">
+   </form>
+   {% if request.session.result == "correct" %}
+   <div >
+   <p class="correct">correct</p>
+</div>
+{% endif %}
+    {% if request.session.result == "High" %}
+    <div class="high">
+   <p>high</p>
+</div>
+{% endif %}
+    {% if request.session.result == "low" %}
+    <div class="low">
+   <p>low</p>
+</div>
+{% endif %}
+
+
 </body>
 </html>
